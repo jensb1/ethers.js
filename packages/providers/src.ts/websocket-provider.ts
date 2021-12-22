@@ -226,7 +226,7 @@ export class WebSocketProvider extends JsonRpcProvider {
                 this._subscribe("block", [ "newHeads" ], (result: any) => {
                     const blockNumber = BigNumber.from(result.number).toNumber();
                     this._emitted.block = blockNumber;
-                    this.emit("block", blockNumber);
+                    this.emit("block", result);
                 });
                 break;
 
